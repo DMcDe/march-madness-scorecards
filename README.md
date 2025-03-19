@@ -9,3 +9,4 @@ Known issues and future improvements:
 3) Inputting names is somewhat cumbersome. This will be improved in future iterations.
 4) Women's version is in the works.
 5) More comprehensive statistics may be included in future versions.
+6) Color coding for turnovers in the stats chart is wrong. Lower turnovers are red when they should be green.
