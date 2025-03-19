@@ -7,6 +7,11 @@ Created on Sun Mar 17 20:34:41 2024
 
 import requests
 from bs4 import BeautifulSoup
+import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+from seleniumbase import Driver
 
 def readCBBR(team: str, year: str):
     """Scrapes the basketball reference page for a given team and year. Returns dict of stats."""
@@ -123,7 +128,7 @@ def readGameLog(team: str, year: str):
     soup = BeautifulSoup(url.text, "html.parser")
     
     try:
-        gamelog = soup.find("div", attrs={"id": "div_sgl-basic_NCAAM"}).find("table").find("tbody").find_all("tr")
+        gamelog = soup.find("div", attrs={"id": "div_team_game_log"}).find("table").find("tbody").find_all("tr")
     except:
         print("Error fetching games")
         return 1
@@ -135,19 +140,19 @@ def readGameLog(team: str, year: str):
             continue
         
         cols = gm.find_all("td")
-        loc = cols[1].text
-        opp = cols[2].text
-        pt = cols[4].text
-        opt = cols[5].text
-        fgp = cols[8].text
-        ofgp = cols[25].text
-        tpp = cols[11].text
-        otpp = cols[28].text
-        tr = cols[16].text
-        otr = cols[33].text
-        to = cols[20].text
-        oto = cols[37].text
-        
+        loc = cols[2].text
+        opp = cols[3].text
+        pt = cols[6].text
+        opt = cols[7].text
+        fgp = cols[10].text
+        ofgp = cols[27].text
+        tpp = cols[13].text
+        otpp = cols[30].text
+        tr = cols[18].text
+        otr = cols[35].text
+        to = cols[22].text
+        oto = cols[39].text
+                
         if (pt == ""):
             continue
         
@@ -174,11 +179,25 @@ def readGameLog(team: str, year: str):
     
 def readKenPom(team: str, year: str):
     """Scrapes kenpom rankings for a given team and year. Returns dict of metrics."""
+    # Set up selenium
+    chrome_options = Options()
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--headless")
+    
+    driver = Driver(uc=True, headless=False)
+    
     link = f'https://kenpom.com/index.php?y={year}'
-    url = requests.get(link, headers = {
-        'User-Agent': 'Popular browser\'s user-agent',
-    })
-    soup = BeautifulSoup(url.text, "html.parser")
+    driver.uc_open_with_reconnect(link, reconnect_time=6)
+    driver.uc_gui_click_captcha()
+    wait = WebDriverWait(driver, 10)
+    wait.until(EC.url_to_be(link))
+    time.sleep(1)
+    if driver.current_url == link:
+        table = driver.page_source
+    
+    soup = BeautifulSoup(table, "html.parser")
+    
+    driver.quit()
     
     #Have to double loop here because every 40 teams is a new tbody
     tables = soup.find("div", attrs={"id": "table-wrapper"}).find("table").find_all("tbody")

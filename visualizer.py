@@ -5,7 +5,7 @@ Created on Mon Mar 18 09:26:52 2024
 @author: djmcd
 """
 
-import formatter as fm
+import cleaner as fm
 import matplotlib as mpl
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import matplotlib.patches as patches
@@ -312,7 +312,7 @@ def makeScorecard(tm_1: str, tm_2: str, cbbr_1: dict, cbbr_2: dict, kp_1: dict, 
     kp_1_ax = fig.add_subplot(gs_ll[3])
     
     #Add logo to axis
-    ab_1 = AnnotationBbox(mgr.getLogo(tm_1, zm = .35), (.5, .5), frameon = False)
+    ab_1 = AnnotationBbox(mgr.getLogo(tm_1.lower(), zm = .35), (.5, .5), frameon = False)
     logo_1_ax.add_artist(ab_1)
     logo_1_ax.set_axis_off()
     
@@ -361,7 +361,7 @@ def makeScorecard(tm_1: str, tm_2: str, cbbr_1: dict, cbbr_2: dict, kp_1: dict, 
     kp_2_ax = fig.add_subplot(gs_rr[3])
     
     #Add logo to axis
-    ab_2 = AnnotationBbox(mgr.getLogo(tm_2, zm = .35), (.5, .5), frameon = False)
+    ab_2 = AnnotationBbox(mgr.getLogo(tm_2.lower(), zm = .35), (.5, .5), frameon = False)
     logo_2_ax.add_artist(ab_2)
     logo_2_ax.set_axis_off()
     

@@ -5,7 +5,7 @@ Created on Sun Mar 17 20:49:07 2024
 @author: djmcd
 """
 
-import formatter as fm
+import cleaner as fm
 import scraper as sc
 import visualizer as vs
     

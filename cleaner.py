@@ -52,7 +52,10 @@ def getRecords(games: dict):
     wp = w / (w + l)
     hwp = h_w / (h_w + h_l)
     rwp = r_w / (r_w + r_l)
-    nwp = n_w / (n_w + n_l)
+    try:
+        nwp = n_w / (n_w + n_l)
+    except:
+        nwp = 0
     
     #Return data
     rec = {"W": w,
