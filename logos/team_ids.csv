@@ -144,7 +144,9 @@ Kansas State,2306
 Kennesaw State,338
 Kent State,2309
 Kentucky,96
+Louisiana State,99
 LSU,99
+Louisiana St.,99
 La Salle,2325
 Lafayette,322
 Lamar,2320
@@ -169,6 +171,7 @@ Marquette,269
 Marshall,276
 Maryland,120
 Maryland-Eastern Shore,2379
+McNeese State,2377
 McNeese St.,2377
 McNeese,2377
 Memphis,235
@@ -236,6 +239,7 @@ Oklahoma State,197
 Old Dominion,295
 Ole Miss,145
 Mississippi,145
+Nebraska Omaha,2437
 Omaha,2437
 Oral Roberts,198
 Oregon,2483
@@ -264,6 +268,8 @@ Rider,2520
 Robert Morris,2523
 Rutgers,164
 SE Louisiana,2545
+Southern Illinois Edwardsville,2565
+SIUE,2565
 SIU Edwardsville,2565
 SMU,2567
 Sacramento State,16
@@ -272,6 +278,8 @@ St. Joseph's,2603
 Saint Joseph's,2603
 Saint Louis,139
 Saint Mary's,2608
+St. Mary's,2608
+St. Mary's (CA),2608
 Saint Peter's,2612
 Sam Houston,2534
 Samford,2535
@@ -300,6 +308,7 @@ Southern Utah,253
 St. Bonaventure,179
 St. Francis (BKN),2597
 St. Francis (PA),2598
+St. John's,2599
 St. John's (NY),2599
 St. Thomas - Minnesota,2900
 Stanford,24
@@ -352,6 +361,7 @@ UNC Asheville,2427
 UNC Greensboro,2430
 UNC Wilmington,350
 UNLV,2439
+Southern California,30
 USC,30
 UT Arlington,250
 UT Martin,2630
@@ -363,6 +373,7 @@ Utah St.,328
 Utah State,328
 Utah Valley,3084
 VCU,2670
+Virginia Commonwealth,2670
 VMI,2678
 Valparaiso,2674
 Vanderbilt,238

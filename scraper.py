@@ -144,14 +144,14 @@ def readGameLog(team: str, year: str):
         opp = cols[3].text
         pt = cols[6].text
         opt = cols[7].text
-        fgp = cols[10].text
-        ofgp = cols[27].text
-        tpp = cols[13].text
-        otpp = cols[30].text
-        tr = cols[18].text
-        otr = cols[35].text
-        to = cols[22].text
-        oto = cols[39].text
+        fgp = cols[11].text
+        ofgp = cols[32].text
+        tpp = cols[14].text
+        otpp = cols[35].text
+        tr = cols[24].text
+        otr = cols[45].text
+        to = cols[28].text
+        oto = cols[49].text
                 
         if (pt == ""):
             continue
